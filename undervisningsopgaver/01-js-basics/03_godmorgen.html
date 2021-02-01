@@ -9,134 +9,28 @@
 
 </head>
 
-<body>
-
-
-
+<body onload="myFunktion()">
     <script>
+        function myFunktion(){
+            let d = new Date();
+            let n = d.getHours();
+            let besked ;
 
-        let tid = document.querySelector("#tid").value;
-
-        function visBesked(txt){
-            console.log(txt);
-
-            if(t < 5){
-                console.log(Godmorgen)
-
-            }else if(t >10){}
-
-            if (isNaN(a)) {
-
-                resultat = "Det er ikke et tal, prøv igen!";
-            } else if (a <= 0) {
-
-                resultat = "Arealet er mindre end nul, prøv igen!"
-            }else{
-
-                resultat = `Arealet er ${a}`;
+            if (n >4 && n <10){
+                besked = "Godmorgen";
             }
-
-        }
-        visBesked("Godmorgen");
-
-
-
-
-        Funktion showMessage() {
-	Alert ( `Hello everyone!` );
-}
-
-
-        function
-
-
-
-
-
-
-           document.querySelector("button").addEventListener("click", buttonClicked);
-
-        function buttonClicked() {
-            let klokken = document.querySelector("#klokken").value;
-            let t = tid(klokken);
-            let resultat;
-
-            if(t < 5){
-                console.log(Godmorgen)
-
-            }else if(t >10){}
-
-            if (isNaN(a)) {
-
-                resultat = "Det er ikke et tal, prøv igen!";
-            } else if (a <= 0) {
-
-                resultat = "Arealet er mindre end nul, prøv igen!"
-            }else{
-
-                resultat = `Arealet er ${a}`;
+            else if (n > 9 && n <18){
+                besked = "Goddag";
             }
-
-
-            console.log(resultat);
-
-        }
-
-        If(alder < 6){
-	Console.log(”før skolealder”);
-} else if (alder < 15){
-	Console.log(”skolealder”);
-} else if (alder < 65){
-	Console.log(”erhvervsaktiv alder”);
-} else{
-	Console.log(”pensionsalder”);
-}
-
-
-        If(betingelse 1){
-	Statement1;
-} else if (betingelse2){
-	Statement2;
-} else if (betingelse3){
-	Statement3;
-} else{
-	Statement4;
-}
-        if (areal < 100) {
-             resultat = "Arealet er for lille";
-
-        } else if (areal < 200) {
-             resultat = "Arealet er OK";
-
-        } else {
-             resultat = "Arealet er for stort";
-        }
-        console.log(resultat);
-
-
-           document.querySelector("button").addEventListener("click", buttonClicked);
-
-        function buttonClicked() {
-            let længde = document.querySelector("#længde").value;
-            let bredde = document.querySelector("#bredde").value;
-            let a = areal(længde, bredde);
-            let resultat;
-            if (isNaN(a)) {
-
-                resultat = "Det er ikke et tal, prøv igen!";
-            } else if (a <= 0) {
-
-                resultat = "Arealet er mindre end nul, prøv igen!"
-            }else{
-
-                resultat = `Arealet er ${a}`;
+            else if (n > 17 && n <24){
+                besked = "Godaften";
             }
-
-
-            console.log(resultat);
+            else if (n >23 && n <5){
+                besked = "Godnat"
+            }
+            console.log(besked);
 
         }
-
 
 
     </script>
