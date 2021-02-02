@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        main {
+            margin: auto;
+            width: 80%;
+        }
+
+        section {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+
+            grid-gap: 20px;
+        }
+
+        article {
+            border: 1px solid black;
+        }
+
+        img {
+            width: 100%;
+        }
+
+         header,
+        footer {
+            text-align: center;
+            border: 1px solid black;
+            padding 15px;
+        }
+
+    </style>
+</head>
+
+
+
+
+
+<body>
+    <header>
+        Titel
+    </header>
+
+    <main>
+        <h2>Undertitel</h2>
+        <section>
+            <article>
+                <img src="https://placeimg.com/400/300/nature" alt="landscape">
+                <h3>Article 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis velit a excepturi blanditiis beatae quod corporis nesciunt eveniet voluptatem voluptatibus dolorum sint recusandae ex, illum, cupiditate consequatur, architecto provident possimus?</p>
+            </article>
+
+            <article>
+                <img src="https://placeimg.com/400/300/nature" alt="landscape">
+                <h3>Article 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam corporis hic repellendus molestiae nihil consequatur sequi non ut excepturi ipsa similique, soluta accusantium quia dolore, maxime aperiam dolor esse fuga.</p>
+            </article>
+
+        </section>
+
+        <footer>This is the footer</footer>
+
+    </main>
+
+    <script>
+        const titel = document.querySelector("header");
+        console.log(titel);
+
+        const main = document.querySelector("main");
+        console.log(main);
+
+        const underoverskrift = document.querySelector("main h2");
+        console.log(underoverskrift);
+
+        const section = document.querySelector("section");
+        console.log(section);
+
+        const article1 = document.querySelector("article:first-child");
+        console.log(article1);
+
+        const pic1 = document.querySelector("article:first-child img");
+        console.log(pic1);
+
+        const overskrift1 = document.querySelector("article:first-child h3");
+        console.log(overskrift1);
+
+        const tekst1 = document.querySelector("article:first-child p");
+        console.log(tekst1);
+
+        const article2 = document.querySelector("article:last-child");
+        console.log(article2);
+
+        const pic2 = document.querySelector("article:last-child img");
+        console.log(pic2);
+
+        const overskrift2 = document.querySelector("article:last-child h3");
+        console.log(overskrift2);
+
+        const tekst2 = document.querySelector("article:last-child p");
+        console.log(tekst2);
+
+        const footer = document.querySelector("footer");
+        console.log(footer);
+
+
+    </script>
+</body>
+
+</html>
