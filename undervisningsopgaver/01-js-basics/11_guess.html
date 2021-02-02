@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheey" href="">
+
+</head>
+
+<body>
+
+    <p>Gæt et tal</p>
+    <input type="text" id="gæt">
+    <button>Klik og se om du gættede tallet, tjek i consollen</button>
+
+
+    <script>
+        document.querySelector("button").addEventListener("click", buttonClicked);
+
+        function buttonClicked() {
+
+
+            let timer = document.querySelector("#timer").value;
+            let co2 = 109;
+            let ialt = (timer * co2);
+            let resultat;
+            if (isNaN(ialt)) {
+
+                resultat = "Det er ikke et tal, prøv igen!";
+            }else{
+
+                resultat = `En flyvetur på ${timer} timer giver en samlet CO2 udledning på ${ialt} kg`;
+            }
+
+
+
+
+        console.log(resultat);
+
+        }
+        document.querySelector("button").addEventListener("click", buttonClicked);
+        function randomTal() {
+
+
+        }
+
+        //0 og 20
+    </script>
+</body>
+
+</html>
