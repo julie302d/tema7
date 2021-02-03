@@ -71,46 +71,49 @@
     </main>
 
     <script>
-        //Overskrift
-        const titel = document.querySelector("header");
-        console.log(titel);
-        //titel.textContent = "Billedegalleri";
-        //Billede 1
+
         const pic1 = document.querySelector("article:nth-child(1) img");
         console.log(pic1);
-        //Billede 2
-        const pic2 = document.querySelector("article:last-child img");
-        console.log(pic2);
-        //lav ny article med append
-        let main = document.querySelector("main");
+        pic1.src = "https://placeimg.com/400/300/nature";
+        pic1.alt = "landscape";
 
-        let nyArtikel = document.createElement("article");
-        //Ny h3
+        const pic2 = document.querySelector("article:nth-child(2) img");
+        console.log(pic2);
+
+        let mainSection = document.querySelector("section");
+        //nyt article element
+        let newArticle = document.createElement("article");
+        //nyt H3 element
         let overskrift = document.createElement("h3");
-        //Overskrift skrives
+        //tekst til overskriften
         let overskriftText = document.createTextNode("Article 3");
-        //Overskrift tilføjes til article
+        //indsæt tekst i overskriften
         overskrift.appendChild(overskriftText);
-        //Article tilføjes til main
-        nyArtikel.appendChild(overskrift);
-        main.appendChild(nyArtikel);
+        //tilføj overskrift til article
+        newArticle.appendChild(overskrift);
+        //tilføj article til section
+        mainSection.appendChild(newArticle);
+
+        newArticle.innerHTML = "<img src=https://placeimg.com/400/300/nature><h3>Article 3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis velit a excepturi blanditiis beatae quod corporis nesciunt eveniet voluptatem voluptatibus dolorum sint recusandae ex, illum, cupiditate consequatur, architecto provident possimus?</p>";
 
         document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-            console.log("DOM er loaded");
-            //Overskrift
-            titel.innerHTML = "<h1>Overskrift</h1>";
-            //Billede 1
-            pic1.src = "mohammad-alizade-62t_kKa2YlA-unsplash.jpg";
-            pic1.alt = "billede af landskab";
-            //Billede 2
-            pic2.src = "mohammad-alizade-62t_kKa2YlA-unsplash.jpg";
-            pic2.alt = "billede af landskab";
-            //Ny artikel
-             nyArtikel.innerHTML = "<img src=https://placeimg.com/400/300/nature><h3>Article 3</h3><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis velit a excepturi blanditiis beatae quod corporis nesciunt eveniet voluptatem voluptatibus dolorum sint recusandae ex, illum, cupiditate consequatur, architecto provident possimus?</p>";
+            console.log("dom er loaded");
+            const pic1 = document.querySelector("article:nth-child(1) img");
+            //console.log(pic1);
+            pic1.src = "https://placeimg.com/400/300/nature";
+            const pic2 = document.querySelector("article:nth-child(2) img");
+            //console.log(pic2);
         }
 
+        const tilfaeldigtTal = (Math.random() * 10);
+
+        pic1.addEventListener("click", tilfældigtTal);
+
+        function tilfældigtTal() {
+            pic1.src = "https://placeimg.com/400/300/arch?t=" + tilfældigtTal;
+        }
 
     </script>
     <footer>This is the footer</footer>
@@ -118,3 +121,5 @@
 </body>
 
 </html>
+
+
