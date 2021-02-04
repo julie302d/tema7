@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dyr i array</title>
+</head>
+<body>
+
+
+
+<!--
+    <article id="dyr">
+    <p></p>
+    <img src="" alt="">
+    </article>
+-->
+
+    <script>
+
+//        const dyr = {"navn": "Gris", "type": "Pattedyr", "billede": "https://mabe-kea.dk/E19/pics/pig.png", "levested": "Svinefarm"}
+//
+//        const destination = document.querySelector("#dyr");
+//        const information = `navn: ${dyr.navn}, type: ${dyr.type}, levested: ${dyr.levested}`;
+//        destination.querySelector("p").textContent = information;
+//        destination.querySelector("img").src = dyr.billede;
+
+        let dyr = [
+            {"navn":"Frø","type":"amfibie","levested":"vandhullet", "billede":"http://mabe-kea.dk/E19/pics/frog.png"},
+            {"navn":"Gris","type":"pattedyr","levested":"grisefarm", "billede":"http://mabe-kea.dk/E19/pics/pig.png"},
+            {"navn":"Ræv","type":"pattedyr","levested":"skoven", "billede":"http://mabe-kea.dk/E19/pics/fox.png"},
+            {"navn":"Sild","type":"fisk","levested":"havet", "billede":"http://mabe-kea.dk/E19/pics/sild.jpg"},
+            {"navn":"Krokodille","type":"krypdyr","levested":"floden", "billede":"http://mabe-kea.dk/E19/pics/kroko.jpg"}
+
+        ];
+
+        //Jeg kan her fortælle at jeg gerne vil have min consol til at vise dyr som jo er dem alle sammen. ville jeg kun have ét navn frem skulle jeg skrive console.log(dyr[0].navn);
+        console.log(dyr);
+
+
+    </script>
+
+</body>
+</html>
