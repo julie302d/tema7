@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SlideShow</title>
+
+</head>
+<body>
+
+    <h1>Tro på det...</h1>
+    <img src="" alt="">
+    <button>Videre</button>
+    <p>Billeder venligt udlånt af Rasmus Bregnhøi</p>
+
+    <script>
+    //lav en tæller
+        let number = 0;
+
+        //Find billede
+        const billede = document.querySelector("img");
+
+        //Opret array
+        let billeder = ["img1.png", "img2.png","img3.png", "img4.png","img5.png", "img6.png","img7.png", "img8.png"];
+
+        //klik på knap for at skifte billede
+
+        const knap = document.querySelector("button");
+        const billede = document.querySelector("img");
+        let number = 0;
+
+        knap.addEventListener("click", skiftBillede);
+
+        //opret funktion til at skifte billede
+        function skiftBillede(){
+            number++;
+            billede.src = "billeder/"+billeder[1];
+        }
+
+
+    </script>
+
+</body>
+</html>
