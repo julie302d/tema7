@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .overskrift_kasse {
+            margin: 0 auto;
+            width: 80%;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 40px 0px;
+            box-shadow: 0px 0px 15px 0px rgba(56, 50, 56, 1);
+        }
+
+        h1 {
+            color: darkorange;
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 4.8rem;
+
+        }
+
+        h2 {
+            color: darkorange;
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-top: 3rem;
+            text-align: center;
+
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .overskrift_img {}
+
+        img {
+            width: 100%;
+        }
+
+        nav {
+            text-align: center;
+            margin-top: 1rem;
+
+        }
+
+        hr {
+            display: block;
+            border: 0;
+            border-top: 2px solid #000;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            border: none;
+            font-size: 1.5rem;
+
+        }
+
+        button:hover {
+            color: #ED5242;
+        }
+
+
+        .valgt {
+            color: black;
+
+        }
+
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            grid-gap: 1em;
+            margin: 2em;
+        }
+
+        .ret {
+            padding: 1em;
+            border: 1px solid;
+            border-radius: 1em;
+        }
+
+        footer h3 {
+            font-size: 1rem;
+            margin-left: 2rem;
+        }
+
+        footer h4 {
+            font-size: 1rem;
+            margin-left: 2rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h1>Bistro Babushka</h1>
+
+
+    <nav>
+        <button data-kategori="alle" class="valgt">Alle</button>
+        <button data-kategori="forretter">Forretter</button>
+        <button data-kategori="hovedretter">Hovedretter</button>
+        <button data-kategori="desserter">Desserter</button>
+        <button data-kategori="drikkevarer">Drikkevarer</button>
+    </nav>
+    <hr style="width:95%">
+    <header>
+        <h2>Alle retter</h2>
+    </header>
+
+
+    <section id="liste"></section>
+
+    <template>
+        <article class="ret">
+            <h3 class="navn"></h3>
+            <p class="kortbeskrivelse">Kort beskrivelse</p>
+            <p class="pris">Pris:</p>
+            <p class="oprindelsesregion">Oprindelse:</p>
+            <img src="" alt="" class="billeder">
+        </article>
+    </template>
+
+    <hr style="width:95%">
+    <script>
+        const header = document.querySelector("header h2");
+        const medieurl = "https://babushka-dd8a.restdb.io/media/";
+        const myHeaders = {
+
+            "x-apikey": "600ec2fb1346a1524ff12de4"
+        }
+        document.addEventListener("DOMContentLoaded", start)
+        let retter;
+        //Jeg laver en variabel "filter"
+        let filter = "alle";
+
+
+        // første funktion der kaldes efter DOM er loaded
+        function start() {
+            const filterKnapper = document.querySelectorAll("nav button");
+            filterKnapper.forEach(knap => knap.addEventListener("click", filtrerRetter));
+            loadJSON();
+        }
+
+        //Eventlistner knyttet til knapperne der vælger hvad for et filter der er aktivt
+        function filtrerRetter() {
+            filter = this.dataset.kategori; //Sæt verdien "filter" til værdien af data-troende på den knap der er klikket på
+            document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra den knap
+            this.classList.add("valgt") //marker den knap, der er klikket på
+            visRetter(); //kald funktionen visPersoner efter det nye filter er sat
+            header.textContent = this.textContent;
+        }
+
+
+        async function loadJSON() {
+            const JSONData = await fetch("https://babushka-dd8a.restdb.io/rest/menu", {
+                headers: myHeaders
+            });
+            retter = await JSONData.json();
+            console.log("Retter", retter);
+            visRetter();
+        }
+
+        //funktion der viser personer i liste view
+        function visRetter() {
+            const dest = document.querySelector("#liste"); // container til articles med en person
+            const skabelon = document.querySelector("template").content; // select indhold af html skabelon (article)
+            dest.textContent = ""; //ryd container inden nyt loop
+            retter.forEach(ret => {
+                console.log("kategori", ret.kategori);
+                // loop igennem json (retter)
+
+                if (filter == ret.kategori || filter == "alle") {
+                    const klon = skabelon.cloneNode(true);
+                    klon.querySelector(".navn").textContent = ret.navn;
+                    klon.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
+                    klon.querySelector(".oprindelsesregion").textContent += `${ret.oprindelsesregion}`;
+                    klon.querySelector(".pris").textContent += `${ret.pris} kr`;
+                    klon.querySelector(".billeder").src = medieurl + ret.billede;
+                    klon.querySelector(".ret").addEventListener("click", () => visDetaljer(ret));
+                    dest.appendChild(klon);
+                }
+
+            })
+        }
+
+
+        function visDetaljer(hvad) {
+            location.href = `detaljer.html?id=${hvad._id}`;
+        }
+    </script>
+</body>
+<footer>
+    <h3>Adresse: Grønnegade 97 1234 København K</h3>
+    <h4>Åbningstider</h4>
+</footer></html>
