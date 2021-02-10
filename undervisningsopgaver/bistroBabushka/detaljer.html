@@ -7,16 +7,65 @@
     <title>Detajler</title>
 </head>
 
-<body>
+<style>
+    img {
+        width: 100%;
+    }
 
+    nav {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        text-align: left;
+    }
+
+    #logo {
+        width: 4rem;
+        text-align: left;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    .ret {
+
+        padding: 1em;
+        border: 1px solid;
+        border-radius: 1em;
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: 1fr;
+        column-gap: 10px;
+        margin: auto;
+        width: 60%;
+    }
+
+    article #button {
+        background-color: white;
+        color: black;
+        border: 1px solid black;
+        font-size: 1rem;
+    }
+
+</style>
+
+
+<body>
+    <nav>
+        <div id="logo" class="hide_on_mobile"><a href="babushkaKopi.html"><img src="minBabuskhaLogo.jpg" alt="Bistro Babushka"></a></div>
+    </nav>
     <article class="ret">
         <h3 class="navn"></h3>
-        <p class="kortbeskrivelse">Kort beskrivelse</p>
+        <!--        <p class="kortbeskrivelse">Kort beskrivelse</p>-->
+        <p class="langbeskrivelse">Lang beskrivelse</p>
         <p class="pris">Pris:</p>
         <p class="oprindelsesregion">Oprindelse:</p>
         <img src="" alt="" class="billeder">
         <button>Tilbage</button>
+
     </article>
+
 </body>
 
 </html>
@@ -49,7 +98,8 @@
 
     function visRet() {
         document.querySelector(".navn").textContent = ret.navn;
-        document.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
+        //        document.querySelector(".kortbeskrivelse").textContent = ret.kortbeskrivelse;
+        document.querySelector(".langbeskrivelse").textContent = ret.langbeskrivelse;
         document.querySelector(".oprindelsesregion").textContent += `${ret.oprindelsesregion}`;
         document.querySelector(".pris").textContent += `${ret.pris}kr`;
         document.querySelector(".billeder").src = medieurl + ret.billede;

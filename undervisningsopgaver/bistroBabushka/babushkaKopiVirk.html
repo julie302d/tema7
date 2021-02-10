@@ -15,7 +15,7 @@
         }
 
         h1 {
-            color: #C3E2F8;
+            color: darkorange;
             display: grid;
             grid-template-columns: 1fr;
             margin-top: 2rem;
@@ -25,7 +25,7 @@
         }
 
         h2 {
-            color: #001D8A;
+            color: darkorange;
             display: grid;
             grid-template-columns: 1fr;
             margin-top: 3rem;
@@ -38,10 +38,7 @@
         }
 
         img {
-            filter: grayscale(20%);
-            width: 25%;
-            height: 50px;
-
+            width: 100%;
         }
 
         nav {
@@ -53,7 +50,7 @@
         hr {
             display: block;
             border: 0;
-            border-top: 2px solid orange;
+            border-top: 2px solid #000;
             text-align: center;
             margin-top: 2rem;
         }
@@ -85,9 +82,6 @@
         }
 
         .ret {
-            overflow: hidden;
-            display: block;
-            position: relative;
             padding: 1em;
             border: 1px solid;
             border-radius: 1em;
@@ -102,41 +96,22 @@
             font-size: 1rem;
             margin-left: 2rem;
         }
-
-        .billeder {
-            opacity: 1;
-            display: block;
-            width: 100%;
-            height: auto;
-            transition: .5s ease;
-            backface-visibility: hidden;
-
-        }
-
-        .container:hover .billeder {
-            opacity: 0.3;
-            transform: scale(1.1);
-
-        }
-
     </style>
 
 </head>
 
 <body>
 
-
     <h1>Bistro Babushka</h1>
+
+
     <nav>
-        <button img="minBabushkaLogo.jpg"></button>
         <button data-kategori="alle" class="valgt">Alle</button>
         <button data-kategori="forretter">Forretter</button>
         <button data-kategori="hovedretter">Hovedretter</button>
         <button data-kategori="desserter">Desserter</button>
         <button data-kategori="drikkevarer">Drikkevarer</button>
     </nav>
-
-
     <hr style="width:95%">
     <header>
         <h2>Alle retter</h2>
@@ -151,14 +126,11 @@
             <p class="kortbeskrivelse">Kort beskrivelse</p>
             <p class="pris">Pris:</p>
             <p class="oprindelsesregion">Oprindelse:</p>
-            <div class="container">
-                <img src="" alt="" class="billeder">
-            </div>
+            <img src="" alt="" class="billeder">
         </article>
     </template>
 
     <hr style="width:95%">
-
     <script>
         const header = document.querySelector("header h2");
         const medieurl = "https://babushka-dd8a.restdb.io/media/";
@@ -225,12 +197,9 @@
         function visDetaljer(hvad) {
             location.href = `detaljer.html?id=${hvad._id}`;
         }
-
     </script>
 </body>
 <footer>
     <h3>Adresse: Grønnegade 97 1234 København K</h3>
     <h4>Åbningstider</h4>
-</footer>
-
-</html>
+</footer></html>
