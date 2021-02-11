@@ -4,6 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/bmz6sqo.css">
+    <link rel="stylesheet" href="https://use.typekit.net/bmz6sqo.css">
     <title>Detajler</title>
 </head>
 
@@ -12,52 +14,91 @@
         width: 100%;
     }
 
-    nav {
-        position: relative;
-        display: flex;
-        justify-content: flex-end;
-        text-align: left;
-    }
-
-    #logo {
-        width: 4rem;
-        text-align: left;
-    }
-
     h3 {
-        text-align: center;
-    }
-
-    .ret {
-
-        padding: 1em;
-        border: 1px solid;
-        border-radius: 1em;
+        font-family: beloved-script, sans-serif;
+        letter-spacing: 3px;
+        color: #FF9300;
         display: grid;
-        grid-gap: 2rem;
         grid-template-columns: 1fr;
-        column-gap: 10px;
-        margin: auto;
-        width: 60%;
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 2rem;
     }
 
-    article #button {
-        background-color: white;
+    p {
+        font-family: basic-sans, sans-serif;
+        font-style: normal;
+        font-weight: 100;
+    }
+
+    article .ret {
+        padding: 1em;
+        overflow: hidden;
+        display: block;
+        font-family: sans-serif;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: 5rem;
+
+    }
+
+    .top img {
+        float: left;
+        width: 6%;
+        margin: 0 0 0 15px;
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+
+    .ret button {
+        font-family: beloved-sans, sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        border: 1px lightgrey;
+        margin: 1rem;
         color: black;
-        border: 1px solid black;
+        border: none;
         font-size: 1rem;
     }
 
+    @media screen and (min-width: 550px) {
+
+        .ret {
+            display: grid;
+            grid-template-columns: 1fr;
+
+        }
+
+        .top img {
+            float: left;
+            width: 9%;
+            margin: 0 0 0 15px;
+            position: relative;
+            top: 10px;
+            left: 10px;
+        }
+
+        article .ret {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-gap: 3em;
+            margin: 5em;
+        }
+
+    }
 </style>
 
 
 <body>
-    <nav>
-        <div id="logo" class="hide_on_mobile"><a href="babushkaKopi.html"><img src="minBabuskhaLogo.jpg" alt="Bistro Babushka"></a></div>
+
+    <nav class="top">
+        <a href="babushkaKopiVirk.html"><img src="nybabushkaLogo.png" alt="logo" class="logo"></a>
+
     </nav>
+
     <article class="ret">
         <h3 class="navn"></h3>
-        <!--        <p class="kortbeskrivelse">Kort beskrivelse</p>-->
         <p class="langbeskrivelse">Lang beskrivelse</p>
         <p class="pris">Pris:</p>
         <p class="oprindelsesregion">Oprindelse:</p>
@@ -66,9 +107,7 @@
 
     </article>
 
-</body>
-
-</html>
+</body></html>
 
 
 <script>

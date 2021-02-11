@@ -4,27 +4,37 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Bistro Babushka</title>
     <style>
-        .overskrift_kasse {
-            margin: 0 auto;
-            width: 80%;
-            background: rgba(255, 255, 255, 0.7);
-            padding: 40px 0px;
-            box-shadow: 0px 0px 15px 0px rgba(56, 50, 56, 1);
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: whitesmoke;
+        }
+
+        nav {
+            position: relative;
+            display: flex;
+            justify-content: flex-end;
+            text-align: right;
         }
 
         h1 {
+            font-family: 'Playfair Display', serif;
+            text-shadow: 2px 2px #001D8A;
             color: #C3E2F8;
             display: grid;
             grid-template-columns: 1fr;
-            margin-top: 2rem;
             text-align: center;
             font-size: 4.8rem;
-
         }
 
         h2 {
+            font-family: 'Playfair Display', serif;
             color: #001D8A;
             display: grid;
             grid-template-columns: 1fr;
@@ -37,42 +47,92 @@
             font-family: sans-serif;
         }
 
-        img {
+        template img {
             filter: grayscale(20%);
             width: 25%;
             height: 50px;
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
 
         }
 
-        nav {
-            text-align: center;
-            margin-top: 1rem;
+       #logo {
+        width: 4.5rem;
+    }
 
+        .desktop_logo{
+        text-align: center;
+        width: 30%;
+        margin: 0 45%;
+        display: block;
+        margin-bottom: 15px;
+    }
+
+        img {
+            width: 100%;
         }
+
+
+        #menupunkter {
+            position: relative;
+            padding-top: 3rem;
+        }
+
+        header {
+            margin-top: 0;
+            position: fixed;
+            z-index: 1;
+            background-color: rgba(255, 255, 255, 0.5);
+            width: 100%;
+            font-family: 'Playfair Display';
+            font-weight: 300;
+            /*    text-align: right;*/
+        }
+
+        nav a {
+            font-family: 'Playfair Display';
+            text-decoration: none;
+            letter-spacing: 3px;
+            font-weight: bold;
+            font-size: 20px;
+            padding-top: 25px;
+            padding-right: 25px;
+            z-index: 100;
+        }
+
 
         hr {
             display: block;
-            border: 0;
-            border-top: 2px solid orange;
+            border-top: 8px dotted orange;
             text-align: center;
             margin-top: 2rem;
         }
+        div{
+            text-align: center;
+        }
 
         button {
-            background-color: white;
-            color: black;
+            background-color: #001D8A;
+            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
             border: none;
-            font-size: 1.5rem;
-
+            color: lightcyan;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 16px;
+            margin: 8px 5px;
+            opacity: 0.6;
+            transition: 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            cursor: pointer;
         }
 
         button:hover {
-            color: #ED5242;
+            color: #30a8fd;
         }
 
 
         .valgt {
-            color: black;
+            color: orange;
 
         }
 
@@ -88,17 +148,21 @@
             overflow: hidden;
             display: block;
             position: relative;
+            margin: 10px;
             padding: 1em;
             border: 1px solid;
-            border-radius: 1em;
+            cursor: pointer;
+
         }
 
         footer h3 {
+            font-family: 'Playfair Display', serif;
             font-size: 1rem;
             margin-left: 2rem;
         }
 
         footer h4 {
+            font-family: 'Playfair Display', serif;
             font-size: 1rem;
             margin-left: 2rem;
         }
@@ -118,49 +182,64 @@
             transform: scale(1.1);
 
         }
-
     </style>
 
 </head>
 
 <body>
 
+    <header>
+        <nav>
+            <div id="logo" class="hide_on_mobile"><a href="babushkaKopi.html"><img src="Asset%202.png" alt="Logo"></a></div>
+            <div id="menupunkter" class="hide_on_mobile">
+                <a href="babushkaKopi.html">Velkommen</a>
+                <a href="babushkaKopi.html">Nyheder</a>
+                <a href="babushkaKopi.html">Kontakt</a>
+            </div>
+        </nav>
+    </header>
 
-    <h1>Bistro Babushka</h1>
-    <nav>
-        <button img="minBabushkaLogo.jpg"></button>
+
+    <img class="desktop_logo" src="Asset%203.png" alt="Logo">
+
+    <div>
         <button data-kategori="alle" class="valgt">Alle</button>
         <button data-kategori="forretter">Forretter</button>
         <button data-kategori="hovedretter">Hovedretter</button>
         <button data-kategori="desserter">Desserter</button>
         <button data-kategori="drikkevarer">Drikkevarer</button>
-    </nav>
+    </div>
 
 
     <hr style="width:95%">
-    <header>
+
+
+    <section>
         <h2>Alle retter</h2>
-    </header>
+    </section>
+
+
 
 
     <section id="liste"></section>
 
     <template>
         <article class="ret">
+            <div class="container">
+                <img src="" alt="" class="billeder">
+            </div>
             <h3 class="navn"></h3>
             <p class="kortbeskrivelse">Kort beskrivelse</p>
             <p class="pris">Pris:</p>
             <p class="oprindelsesregion">Oprindelse:</p>
-            <div class="container">
-                <img src="" alt="" class="billeder">
-            </div>
+
         </article>
     </template>
 
     <hr style="width:95%">
 
     <script>
-        const header = document.querySelector("header h2");
+        const section = document.querySelector("section h2");
         const medieurl = "https://babushka-dd8a.restdb.io/media/";
         const myHeaders = {
 
@@ -174,7 +253,7 @@
 
         // første funktion der kaldes efter DOM er loaded
         function start() {
-            const filterKnapper = document.querySelectorAll("nav button");
+            const filterKnapper = document.querySelectorAll("div button");
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerRetter));
             loadJSON();
         }
@@ -185,7 +264,7 @@
             document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra den knap
             this.classList.add("valgt") //marker den knap, der er klikket på
             visRetter(); //kald funktionen visPersoner efter det nye filter er sat
-            header.textContent = this.textContent;
+            section.textContent = this.textContent;
         }
 
 
@@ -225,12 +304,9 @@
         function visDetaljer(hvad) {
             location.href = `detaljer.html?id=${hvad._id}`;
         }
-
     </script>
 </body>
 <footer>
     <h3>Adresse: Grønnegade 97 1234 København K</h3>
     <h4>Åbningstider</h4>
-</footer>
-
-</html>
+</footer></html>
