@@ -4,242 +4,389 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.typekit.net/bmz6sqo.css">
+    <link rel="stylesheet" href="https://use.typekit.net/bmz6sqo.css">
+
+
     <title>Bistro Babushka</title>
-    <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+</head>
+<style>
+    h1 {
+        font-family: beloved-sans, sans-serif;
+        letter-spacing: 2px;
+        color: #FF9300;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 2rem;
+    }
 
-        body {
-            background-color: whitesmoke;
-        }
+    h2 {
+        font-family: beloved-script, sans-serif;
+        letter-spacing: 3px;
+        color: #FF9300;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: -7rem;
+        text-align: center;
+        font-size: 2rem;
 
-        nav {
-            position: relative;
-            display: flex;
-            justify-content: flex-end;
-            text-align: right;
-        }
+
+    }
+
+    h3 {
+        font-family: beloved-script, sans-serif;
+        letter-spacing: 3px;
+        color: #FF9300;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 1rem;
+        text-align: center;
+        font-size: 2rem;
+
+    }
+
+    h4 {
+        font-family: beloved-sans, sans-serif;
+        letter-spacing: 2px;
+        color: #FF9300;
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+        text-align: center;
+        font-size: 1rem;
+    }
+
+    p {
+        font-family: basic-sans, sans-serif;
+        font-style: normal;
+        font-weight: 100;
+    }
+
+    body {
+        font-family: serif;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    nav {
+        text-align: center;
+        margin-top: 1rem;
+
+    }
+
+    hr {
+        display: block;
+        border: 0;
+        border-top: 8px dotted orange;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    button {
+        font-family: beloved-sans, sans-serif;
+        font-weight: 200;
+        font-style: normal;
+        border: 1px lightgrey;
+        margin: 1rem;
+        color: black;
+        border: none;
+        font-size: 1rem;
+
+    }
+
+    button:hover {
+        color: orange;
+    }
+
+
+    .valgt {
+        color: orange;
+
+    }
+
+
+    #liste {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        grid-gap: 3em;
+        margin: 5em;
+    }
+
+    .ret {
+        padding: 1em;
+        overflow: hidden;
+        display: block;
+        font-family: sans-serif;
+        font-size: 1.2rem;
+        text-align: center;
+        margin-top: -5rem;
+
+    }
+
+    article {
+        text-align: center;
+    }
+
+    footer h5 {
+
+        font-family: beloved-sans, sans-serif;
+        letter-spacing: 2px;
+        color: #FF9300;
+        font-size: 1rem;
+    }
+
+    footer p {
+        font-family: beloved-sans, sans-serif;
+        font-size: 0.8rem;
+    }
+
+    .billeder {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+
+    }
+
+    .container:hover .billeder {
+        opacity: 0.3;
+        transform: scale(1.1);
+
+    }
+
+    .container {
+        position: relative;
+    }
+
+    .text {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+        color: white;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    img {
+        max-width: 100%;
+
+    }
+
+    article img {
+        filter: grayscale(20%);
+        width: 25%;
+        height: 50px;
+        box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 5px;
+        width: 90vw;
+        max-width: 1280px;
+        margin: 0 auto;
+
+    }
+
+    .pris {
+        font-family: 'Playfair Display', serif;
+        padding: 0px 10px;
+        margin: 0;
+        font-size: 30px;
+        font-weight: 500;
+        color: orange;
+
+    }
+
+    .desktop_logo {
+        width: 50%;
+        margin: 0 25%;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    #velkommen {
+        padding: 40px 0px;
+        background-image: url(baggrund.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 320px !important;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .top img {
+        float: left;
+        width: 6%;
+        margin: 0 0 0 15px;
+        position: relative;
+        top: 10px;
+        left: 10px;
+    }
+
+    .top button {
+        float: right;
+        margin: 0 0 0 15px;
+        position: relative;
+        top: 10px;
+        right: 10px;
+    }
+
+
+    @media screen and (min-width: 550px) {
 
         h1 {
-            font-family: 'Playfair Display', serif;
-            text-shadow: 2px 2px #001D8A;
-            color: #C3E2F8;
+            font-family: beloved-sans, sans-serif;
+            letter-spacing: 5px;
+            color: #FF9300;
             display: grid;
             grid-template-columns: 1fr;
+            margin-top: 2rem;
             text-align: center;
-            font-size: 4.8rem;
+            font-size: 4rem;
         }
 
         h2 {
-            font-family: 'Playfair Display', serif;
-            color: #001D8A;
+            font-family: beloved-script, sans-serif;
+            letter-spacing: 3px;
+            color: #FF9300;
             display: grid;
             grid-template-columns: 1fr;
-            margin-top: 3rem;
+            margin-top: -7rem;
             text-align: center;
+            font-size: 4rem;
+
 
         }
 
-        body {
-            font-family: sans-serif;
-        }
-
-        template img {
-            filter: grayscale(20%);
-            width: 25%;
-            height: 50px;
-            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
-
-        }
-
-       #logo {
-        width: 4.5rem;
-    }
-
-        .desktop_logo{
-        text-align: center;
-        width: 30%;
-        margin: 0 45%;
-        display: block;
-        margin-bottom: 15px;
-    }
-
-        img {
-            width: 100%;
-        }
-
-
-        #menupunkter {
+        .top img {
+            float: left;
+            width: 9%;
+            margin: 0 0 0 15px;
             position: relative;
-            padding-top: 3rem;
+            top: 10px;
+            left: 10px;
         }
 
-        header {
-            margin-top: 0;
-            position: fixed;
-            z-index: 1;
-            background-color: rgba(255, 255, 255, 0.5);
-            width: 100%;
-            font-family: 'Playfair Display';
-            font-weight: 300;
-            /*    text-align: right;*/
+        .top button {
+            float: right;
+            margin: 0 0 0 15px;
+            position: relative;
+            top: 35px;
+            right: 10px;
         }
 
-        nav a {
-            font-family: 'Playfair Display';
-            text-decoration: none;
-            letter-spacing: 3px;
-            font-weight: bold;
-            font-size: 20px;
-            padding-top: 25px;
-            padding-right: 25px;
-            z-index: 100;
-        }
-
-
-        hr {
+        .desktop_logo {
+            width: 40%;
+            margin: 0 30%;
             display: block;
-            border-top: 8px dotted orange;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        div{
-            text-align: center;
+            margin-bottom: 5px;
         }
 
         button {
-            background-color: #001D8A;
-            box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.1);
+            font-family: beloved-sans, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            border: 1px lightgrey;
+            margin: 1rem;
+            color: black;
             border: none;
-            color: lightcyan;
-            padding: 10px 20px;
-            text-align: center;
-            font-size: 16px;
-            margin: 8px 5px;
-            opacity: 0.6;
-            transition: 0.3s;
-            display: inline-block;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        button:hover {
-            color: #30a8fd;
-        }
-
-
-        .valgt {
-            color: orange;
+            font-size: 1.5rem;
 
         }
 
-
-        #liste {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            grid-gap: 1em;
-            margin: 2em;
-        }
-
-        .ret {
-            overflow: hidden;
-            display: block;
+        .top img {
+            float: left;
+            width: 4%;
+            margin: 0 0 0 15px;
             position: relative;
-            margin: 10px;
-            padding: 1em;
-            border: 1px solid;
-            cursor: pointer;
-
+            top: 10px;
+            left: 10px;
         }
 
-        footer h3 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            margin-left: 2rem;
+        .top button {
+            float: right;
+            margin: 0 0 0 15px;
+            position: relative;
+            top: 10px;
+            right: 10px;
         }
 
-        footer h4 {
-            font-family: 'Playfair Display', serif;
-            font-size: 1rem;
-            margin-left: 2rem;
+        .top .social_icon {
+            width: 3.5%;
+            top: 15px;
+            right: 10px;
         }
+    }
+</style>
 
-        .billeder {
-            opacity: 1;
-            display: block;
-            width: 100%;
-            height: auto;
-            transition: .5s ease;
-            backface-visibility: hidden;
 
-        }
-
-        .container:hover .billeder {
-            opacity: 0.3;
-            transform: scale(1.1);
-
-        }
-    </style>
-
-</head>
 
 <body>
+    <nav class="top">
+        <a href="babushkaKopiVirk.html"><img src="nybabushkaLogo.png" alt="logo" class="logo"></a>
+        <a href="https://da-dk.facebook.com/" target="_blank"><img class="social_icon" src="facebook.png" alt="facebook"></a>
+        <a href="https://www.instagram.com/?hl=en"><img class="social_icon" src="instagram.png" alt="instagram"></a>
 
-    <header>
-        <nav>
-            <div id="logo" class="hide_on_mobile"><a href="babushkaKopi.html"><img src="Asset%202.png" alt="Logo"></a></div>
-            <div id="menupunkter" class="hide_on_mobile">
-                <a href="babushkaKopi.html">Velkommen</a>
-                <a href="babushkaKopi.html">Nyheder</a>
-                <a href="babushkaKopi.html">Kontakt</a>
-            </div>
-        </nav>
-    </header>
+        <button class="bestil">Bestil bord</button>
 
 
-    <img class="desktop_logo" src="Asset%203.png" alt="Logo">
+    </nav>
+    <!--    <img class="desktop_logo" src="overskrift.png" alt="Bistro Babushka overskrift">-->
 
-    <div>
-        <button data-kategori="alle" class="valgt">Alle</button>
+    <h1>Babushka</h1>
+    <h2>Bistro</h2>
+
+    <div id="velkommen">
+        <img class="velkommen_img">
+    </div>
+
+
+
+    <nav>
+        <button data-kategori="alle" class="valgt">Alle retter</button>
         <button data-kategori="forretter">Forretter</button>
         <button data-kategori="hovedretter">Hovedretter</button>
         <button data-kategori="desserter">Desserter</button>
         <button data-kategori="drikkevarer">Drikkevarer</button>
-    </div>
-
-
+    </nav>
     <hr style="width:95%">
-
-
-    <section>
-        <h2>Alle retter</h2>
-    </section>
-
-
+    <header>
+        <h3>Alle retter</h3>
+    </header>
 
 
     <section id="liste"></section>
+    <main>
+        <template>
+            <article class="ret">
+                <div class="container">
+                    <img src="" alt="" class="billeder">
+                </div>
+                <h4 class="navn"></h4>
+                <p class="kortbeskrivelse">Kort beskrivelse</p>
+                <p class="oprindelsesregion">Oprindelse:</p>
+                <p class="pris"></p>
 
-    <template>
-        <article class="ret">
-            <div class="container">
-                <img src="" alt="" class="billeder">
-            </div>
-            <h3 class="navn"></h3>
-            <p class="kortbeskrivelse">Kort beskrivelse</p>
-            <p class="pris">Pris:</p>
-            <p class="oprindelsesregion">Oprindelse:</p>
-
-        </article>
-    </template>
+            </article>
+        </template>
+    </main>
 
     <hr style="width:95%">
 
     <script>
-        const section = document.querySelector("section h2");
+        const header = document.querySelector("header h3");
         const medieurl = "https://babushka-dd8a.restdb.io/media/";
         const myHeaders = {
 
@@ -253,7 +400,7 @@
 
         // første funktion der kaldes efter DOM er loaded
         function start() {
-            const filterKnapper = document.querySelectorAll("div button");
+            const filterKnapper = document.querySelectorAll("nav button");
             filterKnapper.forEach(knap => knap.addEventListener("click", filtrerRetter));
             loadJSON();
         }
@@ -264,7 +411,7 @@
             document.querySelector(".valgt").classList.remove("valgt"); //fjern klassen valgt fra den knap
             this.classList.add("valgt") //marker den knap, der er klikket på
             visRetter(); //kald funktionen visPersoner efter det nye filter er sat
-            section.textContent = this.textContent;
+            header.textContent = this.textContent;
         }
 
 
@@ -307,6 +454,18 @@
     </script>
 </body>
 <footer>
-    <h3>Adresse: Grønnegade 97 1234 København K</h3>
-    <h4>Åbningstider</h4>
+    <div class="adresse_style">
+        <h5>Adresse</h5>
+        <p>Grønnegade 97 1234 København K</p>
+    </div>
+    <div class="åbningstider_style">
+        <h5>Åbningstider</h5>
+        <p> Mandag: 10.30 - 22.00 </p>
+        <p> Tirsdag: 10.30 - 22.00 </p>
+        <p> Onsdag: 10.30 - 22.00 </p>
+        <p> Torsdag: 10.30 - 22.00 </p>
+        <p> Fredag: 10.30 - 22.00 </p>
+        <p> Lørdag: 12.00 - 23.00 </p>
+        <p> Søndag: Lukket</p>
+    </div>
 </footer></html>
